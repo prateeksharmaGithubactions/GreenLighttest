@@ -1,17 +1,11 @@
-# This file is a template, and might need editing before it works on your project.
-# Official framework image. Look for the different tagged releases at:
-# https://hub.docker.com/r/library/node/tags/
-image: node:latest
-image: java:latest
+image: gl-scanner-java-LATEST-unzip
 
 stages:
   - greenlight
-
   
 greenlight_job:
   stage: greenlight
-
-  script:
+script:
     - curl -O https://downloads.veracode.com/securityscan/gl-scanner-java-LATEST.zip
     - unzip gl-scanner-java-LATEST.zip gl-scanner-java.jar
     - java -jar gl-scanner-java.jar
